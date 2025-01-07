@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adoption Form</title>
+</head>
+<body>
+    <h1>Apply to Adopt a Pet</h1>
+    <form action="submit-adoption" method="post">
+        <label for="name">Your Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="pet-id">Pet ID (from the table):</label><br>
+        <input type="number" id="pet-id" name="pet-id" required><br><br>
+
+        <label for="reason">Why do you want to adopt this pet?</label><br>
+        <textarea id="reason" name="reason" rows="4" cols="50" required></textarea><br><br>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <h3>Navigation</h3>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="adoption-form.html">Adoption Form</a></li>
+    </ul>
+</body>
+</html>
