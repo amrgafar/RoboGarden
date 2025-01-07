@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+</head>
+<body>
+    <h1>Task Manager</h1>
+
+    <h2>Create New Task</h2>
+    <form id="task-form">
+        <label for="task-name">Task Name:</label><br>
+        <input type="text" id="task-name" required><br><br>
+
+        <label for="task-description">Task Description:</label><br>
+        <textarea id="task-description" required></textarea><br><br>
+
+        <label for="due-date">Due Date:</label><br>
+        <input type="date" id="due-date" required><br><br>
+
+        <button type="submit">Add Task</button>
+    </form>
+
+    <h2>Your Tasks</h2>
+    <table id="task-table" border="1">
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Description</th>
+                <th>Due Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Tasks will be added here -->
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById("task-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get input values
+            const taskName = document.getElementById("task-name").value;
+            const taskDescription = document.getElementById("task-description").value;
+            const dueDate = document.getElementById("due-date").value;
+
+            // Create a new row in the table
+            const table = document.getElementById("task-table").getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            // Insert new cells in the row
+            newRow.insertCell(0).textContent = taskName;
+            newRow.insertCell(1).textContent = taskDescription;
+            newRow.insertCell(2).textContent = dueDate;
+
+            // Clear form inputs
+            document.getElementById("task-name").value = '';
+            document.getElementById("task-description").value = '';
+            document.getElementById("due-date").value = '';
+        });
+    </script>
+</body>
+</html>
